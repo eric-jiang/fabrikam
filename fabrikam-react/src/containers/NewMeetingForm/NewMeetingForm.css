@@ -21,7 +21,6 @@ input[type=text], select {
   input[type=submit] {
     background-color: #4553a0;
     width: 20%;
-    align-items: right;
     padding: 14px 20px;
     height: 10%;
   }

@@ -6,6 +6,7 @@ import axios from "axios";
 import DatePicker from 'react-datetime';
 import moment from 'moment';
 import {useInput} from '../../hooks/useInput';
+import NavBar from "../../components/NavBar";
 import "./NewMeetingForm.css";
 import 'react-datetime/css/react-datetime.css';
 
@@ -39,7 +40,7 @@ const NewMeetingForm = () => {
         axios
             .post(url, requestBody, header)
             .then(() => {
-                history.push("/");
+                history.push("/meetings");
             })
             .catch(() => {
                 resetInvitee();
@@ -49,52 +50,55 @@ const NewMeetingForm = () => {
     }
 
     return (
-        <div className="body-text-container">
-            <div className="body-text">
-                <Form className="Input">
-                    <h5>
-                        Inviter: {user.email}
-                    </h5>
-
-                    <Label>
-                        Start Time:
-                    </Label>
-                    <DatePicker
-                        inputProps={{
-                            style: {width: 250}
-                        }}
-                        value={startTime}
-                        dateFormat="DD-MM-YYYY"
-                        timeFormat="hh:mm A"
-                        onChange={val => setStartTime(val)}
-                    />
-
-                    <Label>
-                        End Time:
-                    </Label>
-                    <DatePicker
-                        inputProps={{
-                            style: {width: 250}
-                        }}
-                        value={endTime}
-                        dateFormat="DD-MM-YYYY"
-                        timeFormat="hh:mm A"
-                        onChange={val => setEndTime(val)}
-                    />
-
-                    <Label>
-                        Invitee:
-                    </Label>
-                    <Input type="text" {...bindInvitee} />
-
-                    <Button type="cancel">
-                        <Link to="/">Cancel</Link>
-                    </Button>
-
-                    <Input type="submit" className="btn-link" value="Submit" onClick={handleSubmit}/>
-                </Form>
+        <>
+            <NavBar />
+            <div className="body-text-container">
+                <div className="body-text">
+                    <Form className="Input">
+                        <h5>
+                            Inviter: {user.email}
+                        </h5>
+    
+                        <Label>
+                            Start Time:
+                        </Label>
+                        <DatePicker
+                            inputProps={{
+                                style: {width: 250}
+                            }}
+                            value={startTime}
+                            dateFormat="DD-MM-YYYY"
+                            timeFormat="hh:mm A"
+                            onChange={val => setStartTime(val)}
+                        />
+    
+                        <Label>
+                            End Time:
+                        </Label>
+                        <DatePicker
+                            inputProps={{
+                                style: {width: 250}
+                            }}
+                            value={endTime}
+                            dateFormat="DD-MM-YYYY"
+                            timeFormat="hh:mm A"
+                            onChange={val => setEndTime(val)}
+                        />
+    
+                        <Label>
+                            Invitee:
+                        </Label>
+                        <Input type="text" {...bindInvitee} />
+    
+                        <Button type="cancel">
+                            <Link to="/meetings">Cancel</Link>
+                        </Button>
+    
+                        <Input type="submit" className="btn-link" value="Submit" onClick={handleSubmit}/>
+                    </Form>
+                </div>
             </div>
-        </div>
+        </>   
     );
 };
 

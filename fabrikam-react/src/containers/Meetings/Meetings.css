@@ -14,4 +14,9 @@
 
 .btn-link {
     float: right;
+    color: #4553a0;
+}
+
+.btn-link:hover {
+    color: #4553a0;
 }
