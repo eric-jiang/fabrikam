@@ -4,9 +4,23 @@ This solution consists three main components
 - A resource api in C#, `Fabrikam.Api`
 - An Identity Provider using Auth0 free tier, https://atomy0606.au.auth0.com/.well-known/openid-configuration
 
+# How to run
+Both the frontend and backend project need to be up and running.
+
+#### For frontend `fabrikam-react`
+Running on http://localhost:3000
+- `cd ./fabrikam-react`
+- `npm install`
+- `npm start`
+
+#### For backend `Fabrikam.Api`
+Running on https://localhost:5001
+- `cd ./Fabrikam.Api/`
+- `dotnet run`
+
 # Assumptions
 - This is solution is a PoC so I didn't include usual development practices, e.g. validation, tests, domain driven design, etc.
-- The solution only implements parts that are used for demonstrating IAM concerns. 
+- The solution only implements parts that are required for demonstrating IAM concerns. 
 
 # IAM considerations
 ### Frontend `fabrikam-react`
