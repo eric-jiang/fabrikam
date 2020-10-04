@@ -11,12 +11,12 @@ import "./NewMeetingForm.css";
 import 'react-datetime/css/react-datetime.css';
 
 const NewMeetingForm = () => {
+    const apiOrigin = process.env.REACT_APP_MEETING_API_HOST;
+    
     const {value: invitee, bind: bindInvitee, reset: resetInvitee} = useInput('');
     const [startTime, setStartTime] = useState(moment());
     const [endTime, setEndTime] = useState(moment());
     const { user, getAccessTokenSilently } = useAuth0();
-    
-    const apiOrigin = "https://localhost:5001";
 
     let history = useHistory();
 

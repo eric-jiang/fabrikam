@@ -8,7 +8,7 @@ import NavBar from "../../components/NavBar";
 import "./Meetings.css"
 
 const Meetings = () => {
-    const apiOrigin = "https://localhost:5001";
+    const apiOrigin = process.env.REACT_APP_MEETING_API_HOST;
 
     const [meetings, setMeetings] = useState({});
     const [role, setRole] = useState('');
