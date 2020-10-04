@@ -6,6 +6,10 @@ This solution consists three main components
 
 # How to run
 Both the frontend and backend project need to be up and running.
+- Recruiter account:
+`Username: recruiter@fabrikam.com; Password: Recruiter@fabrikam.com`
+- Candidate account:
+`Username: candidate@fabrikam.com; Password: Candidate@fabrikam.com`
 
 #### For frontend `fabrikam-react`
 Running on http://localhost:3000
